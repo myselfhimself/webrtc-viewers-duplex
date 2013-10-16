@@ -10,7 +10,7 @@
 <body>
 <script src="socket.io/socket.io.js"></script>
 <script>
-var socket = io.connect('', {port: 443});
+var socket = io.connect('', {port: 8080});
 socket.emit('watcher ready');
 socket.on('game status', function (msg) {
   document.getElementById("game-status").innerHTML += msg + "<br />";

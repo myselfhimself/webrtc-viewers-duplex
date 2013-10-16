@@ -5,7 +5,7 @@
  * When players are in the game, they hit a button to run.
  * Watchers see players running.
  */
-var io = require('socket.io').listen(443);
+var io = require('socket.io').listen(8080);
 
 // Players have a name and can run!
 // structure: property name: socket.id, property value: player name.
