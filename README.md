@@ -3,6 +3,15 @@ webrtc-viewers-duplex
 
 ## A WebRTC Viewers Duplex Proof-of-Concept
 
+
+### Usage
+- On a NodeJS server, run: node server.js
+- In a recent web browser: open index.html in one tab, and game.html in another.
+  Within index.html, enter a player name and start running, see what's happening within game.html.
+- Note that webcam is shown but not streamed anywhere for now.
+
+
+
 ### Roadmap
 1. Page1 + Node + Page2 (almost empty htmls).
    Send an event from Page1 to Page2.
