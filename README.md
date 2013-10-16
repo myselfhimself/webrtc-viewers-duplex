@@ -5,7 +5,7 @@ A WebRTC Viewers Duplex Proof-of-Concept
 
 -proposer une url (max 8)
 - capturer le signal de chacun
-- les afficher en mode peperroni sur une pizza
+- afficher une webcam par voiture
 
 
 
