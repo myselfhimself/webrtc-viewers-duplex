@@ -18,3 +18,5 @@ webrtc-viewers-duplex
 ### Sources
 
 https://www.webrtc-experiment.com/
+http://bloggeek.me/nodejs-webrtc/
+https://bitbucket.org/webrtc/codelab <- nice tut

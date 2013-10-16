@@ -8,20 +8,67 @@
 <![endif]-->
 </head>
 <body>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+var socket = io.connect('http://localhost:8888');
+socket.on('game start', function () {
+  document.getElementById("player-config").hidden = true;
+  document.getElementById("btn_run").hidden = undefined;
+});
+
+// Start the game and send username.
+function play() {
+  var player_name = document.getElementById("player_name").value;
+  if(player_name != "") {
+    socket.emit("player ready", player_name);
+  }
+}
+
+function run() {
+  socket.emit("player run");
+}
+
+</script>
 	<section>
 	  <header>
 	    <h1>Pizza Racing</h1>
 	  </header>
 	  <article>
-	    <input type="text" placeholder="Enter your player name"> 
-	    <input type="button" id="btn_play" value="Play" />
+            <div id="player-config">
+	      <input type="text" id="player_name" placeholder="Enter your player name" onclick="play();" /> 
+	      <button id="btn_play" onclick="play();" >Play !</button>
+            </div>
 	    <br>
 	    <br>
-            <input type="button" id="btn_run" value="Hit-run the car" />
+	    <button hidden id="btn_run" onclick="run();" >Hit-run the car</button>
             <br>
             <br>
 	    <a href="game.html">Click to see the ongoing game !</a>
 	  </article>
 	</section>
+
+
+	<!-- camera stuff !-->
+<video />
+
+<script>
+navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+
+var constraints = {video: true};
+
+function successCallback(stream) {
+  window.stream = stream; // stream available to console
+  var video = document.querySelector("video");
+  video.src = window.URL.createObjectURL(stream);
+  video.play();
+}
+
+function errorCallback(error){
+  console.log("navigator.getUserMedia error: ", error);
+}
+
+navigator.getUserMedia(constraints, successCallback, errorCallback);
+</script>
+
 </body>
 </html>

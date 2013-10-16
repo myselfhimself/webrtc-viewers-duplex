@@ -8,13 +8,21 @@
 <![endif]-->
 </head>
 <body>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+var socket = io.connect('http://localhost:8888');
+socket.emit('watcher ready');
+socket.on('game status', function (msg) {
+  document.getElementById("game-status").innerHTML += msg + "<br />";
+});
+</script>
+
 	<section>
 	  <header>
 	    <h1>Pizza Racing</h1>
 	  </header>
 	  <article>
-	   The game here ! 
+	   <p id="game-status">
+           </p>
 	  </article>
 	</section>
-</body>
-</html>
