@@ -10,7 +10,14 @@
 <body>
 <script src="socket.io/socket.io.js"></script>
 <script>
-var socket = io.connect('', {port: 8080});
+
+// Ugly check for local & remote development.
+// local : '':8080, remote: deusnode.demos.alterway.fr:80
+var useDeusNodeServer = (document.domain.indexOf("deusflex.demos") != -1);
+var serverDomain = useDeusNodeServer ? 'deusnode.demos.alterway.fr' : '';
+var serverPort = useDeusNodeServer ? 80 : 8080;
+var socket = io.connect(serverDomain, {port: serverPort});
+
 socket.emit('watcher ready');
 socket.on('game status', function (msg) {
   document.getElementById("game-status").innerHTML += msg + "<br />";
@@ -26,3 +33,6 @@ socket.on('game status', function (msg) {
            </p>
 	  </article>
 	</section>
+
+</body>
+</html>
