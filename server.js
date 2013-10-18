@@ -37,7 +37,7 @@ io.sockets.on('connection', function (socket) {
 
   // When a player runs... he runs, and the watchers know it!
   socket.on('player run', function () {
-    msg = 'test supervisor Player ' + players[socket.id] + ' runs !';
+    msg = 'Player ' + players[socket.id] + ' runs !';
     tellWatchers(msg);
   });
 
