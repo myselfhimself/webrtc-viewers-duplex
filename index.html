@@ -38,7 +38,12 @@
       var buttonPlay = document.querySelector('button#btn_play');
       var buttonRun = document.querySelector('button#btn_run');
 
-      var socket = io.connect('deusnode.demos.alterway.fr', {port: 80});
+      // Ugly check for local & remote development.
+      // local : '':8080, remote: deusnode.demos.alterway.fr:80
+      var useDeusNodeServer = (document.domain.indexOf("deusflex.demos") != -1);
+      var serverDomain = useDeusNodeServer ? 'deusnode.demos.alterway.fr' : '';
+      var serverPort = useDeusNodeServer ? 80 : 8080;
+      var socket = io.connect(serverDomain, {port: serverPort});
 
       socket.on('game start', function () {
         buttonRun.hidden = undefined;
