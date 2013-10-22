@@ -26,6 +26,8 @@ webrtc-viewers-duplex
 ---
 ### Sources
 
-https://www.webrtc-experiment.com/
-http://bloggeek.me/nodejs-webrtc/
-https://bitbucket.org/webrtc/codelab <- nice tut
+- https://bitbucket.org/webrtc/codelab
+- http://blog.gingertech.net/2013/02/06/video-conferencing-in-html5-webrtc-via-socket-io/ 
+- https://www.webrtc-experiment.com/
+- http://bloggeek.me/nodejs-webrtc/
+
