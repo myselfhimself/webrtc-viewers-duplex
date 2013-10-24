@@ -30,4 +30,5 @@ webrtc-viewers-duplex
 - http://blog.gingertech.net/2013/02/06/video-conferencing-in-html5-webrtc-via-socket-io/ 
 - https://www.webrtc-experiment.com/
 - http://bloggeek.me/nodejs-webrtc/
+- http://www.creativebloq.com/javascript/get-started-webrtc-1132857 stream to video to canvas management
 
